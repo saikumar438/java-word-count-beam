@@ -11,3 +11,10 @@ mvn archetype:generate `
  -D version="0.1" `
  -D package=org.apache.beam.examples `
  -D interactiveMode=false
+ 
+ ## Open the directory 
+ dir .\src\main\java\org\apache\beam\examples
+ 
+ ## Run a pipeline
+ mvn compile exec:java -D exec.mainClass=org.apache.beam.examples.WordCount `
+ -D exec.args="--inputFile=sample.txt --output=counts" -P direct-runner
